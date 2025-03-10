@@ -1,3 +1,13 @@
 body {
-    background-color: rgb(155, 71, 10);
+    /* background-color: rgb(155, 71, 10); */
+    background-image: url("../img/logotipo2.webp")
+}
+
+header{
+    background-color: rgb(151, 116, 27);
+    margin: 0px auto;
+    border-radius: 10px;
+}
+nav{
+
 }
