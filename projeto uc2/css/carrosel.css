@@ -1,0 +1,17 @@
+/* Centraliza o carrossel na tela */
+#carouselExampleIndicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  
+}
+
+/* Define um tamanho padrão para as imagens do carrossel */
+.carousel-inner img {
+   
+    object-fit: contain; /* Mantém a proporção e recorta o excesso */
+    display: block;
+  margin-top: 20vh;
+  margin: 0 auto;
+}
