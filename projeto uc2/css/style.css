@@ -8,6 +8,9 @@ header{
     margin: 0px auto;
     border-radius: 10px;
 }
+header img {
+    border-radius: 20px;
+}
 nav{
 
 }
