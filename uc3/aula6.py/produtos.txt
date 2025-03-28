@@ -1,0 +1,5 @@
+Arroz, 20
+Feijao, 15
+Açucar, 10
+Farinha, 5
+ Media dos produtos é12.5
