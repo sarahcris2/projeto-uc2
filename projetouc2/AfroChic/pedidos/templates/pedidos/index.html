@@ -1,0 +1,19 @@
+{% extends "global/base.html" %}
+{% block main %}
+    
+    <section class="container">
+        <form name="teste" method="post" action="index.html">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" name="nome" id="nome" class="form-control">
+            <label for="movel" class="form-label">Telefone</label>
+            <input type="tel" name="movel" id="movel" maxlength="11" class="form-control">
+            <label for="correio" class="form-label"> Email</label>
+            <input type="email" name="correio" id="correio" class="form-control">
+
+            <input type="button" class="btn btn-outline-secondary" value="confirma" onclick="exibirDados()">
+            <input type="reset" class="btn btn-outline-danger" value="limpar">
+            <input type="submit" class="bnt btn-outline-sucess" value="enviar">
+
+          
+        </form>
+{% endblock main %}

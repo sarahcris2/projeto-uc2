@@ -1,0 +1,13 @@
+body {
+    /* background-color: rgb(155, 71, 10); */
+    background-image: url("../img_do_carrosel/logotipo1.webp")
+}
+
+header{
+    background-color: rgb(151, 116, 27);
+    margin: 0px auto;
+    border-radius: 10px;
+}
+header img {
+    border-radius: 20px;
+}
