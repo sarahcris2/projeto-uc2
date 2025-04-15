@@ -2,6 +2,7 @@
 
 {% extends "global/baseloja.html" %}
 {% block main %}
+{% load static %}
 
 <section class="container-fluid">
 
@@ -23,22 +24,22 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="img/saia-e-croped-laranja.jpg" class="d-block " alt="">
+            <img src="{% static '/global/img/saia-e-croped-laranja.jpg' %}" class="d-block" alt="">
           </div>
           <div class="carousel-item">
-            <img src="img/saia_croped_laranja.jpg" class="d-block " alt="">
+            <img src="{% static '/global/img/saia_croped_laranja.jpg '%}" class="d-block " alt="">
           </div>
           <div class="carousel-item">
-            <img src="img/moda-africana-calça-blazer.webp" class="d-block " alt="">
+            <img src="{% static '/global/img/moda_africana_calça_blazer.jpg' %}" class="d-block " alt="">
           </div>
           <div class="carousel-item">
-            <img src="img/vestido com fenda e decote  coraçao.jpg" class="d-block w-50" alt="">
+            <img src="{%static '/global/img/vestido_com_fenda_e_decote_coraçao.jpg' %}" class="d-block w-50" alt="">
           </div>
           <div class="carousel-item">
-            <img src="img/calçaecropped.webp" class="d-block w-50" alt="">
+            <img src="{% static '/global/img/calcaecropped.jpg' %}" class="d-block w-50" alt="">
           </div>
           <div class="carousel-item">
-            <img src="img/vestidoazulfeminino.jpg" class="d-block w-50" alt="">
+            <img src="{%static '/global/img/vestidoazulfeminino.jpg' %}" class="d-block w-50" alt="">
           </div>
         </div>
 
