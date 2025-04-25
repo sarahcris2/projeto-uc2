@@ -1,6 +1,8 @@
 body {
     /* background-color: rgb(155, 71, 10); */
-    background-image: url("../img_do_carrosel/logotipo1.webp")
+    background-image: url("../img_do_carrosel/BG_AfroChic.png");
+    height: auto;
+    width: auto;
 }
 
 header{
