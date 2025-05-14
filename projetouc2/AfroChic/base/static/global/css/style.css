@@ -1,6 +1,6 @@
 body {
     /* background-color: rgb(155, 71, 10); */
-    background-image: url("");
+    background-image: url("img/");
     height: auto;
     width: auto;
 }
@@ -13,3 +13,17 @@ header{
 header img {
     border-radius: 20px;
 }
+
+#sobre {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+}
+    #sobre h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    #sobre p {
+        font-size: 16px;
+        line-height:1.5;
+    }
