@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'roupasinfantis',
     'acessorios',
     'pedidos',
+    'sobre',
 ]
 
 MIDDLEWARE = [
