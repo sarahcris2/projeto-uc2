@@ -22,9 +22,11 @@ from django.contrib.auth.views import LoginView
 from django.conf import settings
 from rest_framework import routers
 from acessorios.views import AcessoriosViewSet
+from roupasfemininas.views import RoupasfemininasViewSet
 
 router = routers.DefaultRouter()
 router.register('acessorios',AcessoriosViewSet)
+router.register('roupasfemininas',RoupasfemininasViewSet)
 
 urlpatterns = [
     path('',include('home.urls')),

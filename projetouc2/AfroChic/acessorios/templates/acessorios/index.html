@@ -1,129 +1,32 @@
 {% extends "global/baseloja.html" %}
 {% block main %}
 {% load static %}
-
-<section class="container">
-  <div class="row row-cols-4">
+<nav class="navbar bg-body-tertiary">
+  <div class="container">
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cartModal">
+          Carrinho (<span id="cartCount">0</span>)
+      </button>
+  </div>
+</nav>
+<section class="container mt-6">
+  <div class="row">
     {% for acessorio in acessorios %}
-    <div class="card col" style="width: 18rem;">
-      <img src="{{ acessorio.foto.url }}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">{{ acessorio.titulo }}</h5>
-        <p class="card-text">{{ acessorio.descricao }}</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div class="col-12 col-sm-12 col-md-4 mb-4">
+      <div class="card h-100">
+        <img src="{{ acessorio.foto.url }}" class="card-img-top" alt="...">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title"><strong>{{ acessorio.titulo }}</strong></h5>
+          <p class="card-text flex-grow-1">{{ acessorio.descricao }}</p>
+          <p class="h4">R$ {{ acessorio.preco }}</p>
+          <button class="btn btn-primary mt-auto" onclick="addToCart(1, '{{acessorio.titulo}}', {{acessorio.preco}})">Adicionar ao
+            Carrinho</button>
+        </div>
       </div>
     </div>
     {% endfor%}
-    <!-- <div class="card col" style="width: 18rem;">
-      <img src="{% static '/global/img3/cordao5voltasdourado.jpg' %}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Conjunto de ouro</h5>
-        <p class="card-text">Conjunto de ouro.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card col" style="width: 18rem;">
-      <img src="{% static '/global/img3/cordaoazul.jpeg' %}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Conjunto de ouro</h5>
-        <p class="card-text">Conjunto de ouro.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card col" style="width: 18rem;">
-      <img src="{% static '/global/img3/img-turbante_marrom.jpg' %}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Conjunto de ouro</h5>
-        <p class="card-text">Conjunto de ouro.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card col" style="width: 18rem;">
-      <img src="{% static '/global/img3/turbantelaranja.webp' %}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Conjunto de ouro</h5>
-        <p class="card-text">Conjunto de ouro.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card col" style="width: 18rem;">
-      <img src="{% static '/global/img3/turbanteverde.jpg' %}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Conjunto de ouro</h5>
-        <p class="card-text">Conjunto de ouro.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card col" style="width: 18rem;">
-      <img src="{% static '/global/img3/turbante_4.jpg' %}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Conjunto de ouro</h5>
-        <p class="card-text">Conjunto de ouro.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card col" style="width: 18rem;">
-      <img src="{% static '/global/img3/turbanteverde.jpg' %}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Conjunto de ouro</h5>
-        <p class="card-text">Conjunto de ouro.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div> 
-    </div> -->
   </div>
 </section>
 
+<div id="alerts" class="container position-fixed top-0 start-50 translate-middle-x" style="z-index: 9999;"></div>
 
-<!-- <body>
-    <section>
-      <div id="carouselExampleIndicators" class="carousel slide">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-            aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-            aria-label="Slide 3"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-            aria-label="S"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide"
-            aria-label="Slide 5"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
-            aria-label="Slide 0"></button>
-        </div>
-
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="{% static '/global/img3/conjuntodeouro.jpg' %}" class="d-block w-50" alt="">
-          </div>
-          <div class="carousel-item">
-            <img src="{% static '/global/img3/cordaoazul.jpeg' %}" class="d-block w-50" alt="">
-          </div>
-          <div class="carousel-item">
-            <img src="{% static '/global/img3/cordao5voltasdourado.jpg' %}" class="d-block w-50" alt="">
-          </div>
-          <div class="carousel-item">
-            <img src="{% static '/global/img3/img-turbante_marrom.jpg' %}" class="d-block w-50" alt="">
-          </div>
-          <div class="carousel-item">
-            <img src="{% static '/global/img3/turbantelaranja.webp' %}" class="d-block w-50" alt="">
-          </div>
-          <div class="carousel-item">
-            <img src="{% static '/global/img3/turbanteverde.jpg' %}" class="d-block w-50" alt="">
-          </div>
-        </div>
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </section>
-     -->
 {% endblock main %}

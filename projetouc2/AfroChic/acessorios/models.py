@@ -7,6 +7,7 @@ class Acessorios(models.Model):
     titulo = models.CharField(max_length=30)
     foto = models.ImageField()
     descricao = models.TextField(blank=True, null=True)
+    preco = models.FloatField(null=True)
 
 
     def __str__(self):
