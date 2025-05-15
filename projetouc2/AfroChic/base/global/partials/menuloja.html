@@ -1,34 +1,35 @@
 {% load static %}
 <header>
-    <!-- cabeçalho da pagina-->
-<section style="justify-items: center;">
+  <!-- cabeçalho da pagina-->
+  <section style="justify-items: center;">
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-
-        <a class="navbar-brand" href="{% url 'home' %}" style="margin-left: 10px; color: aliceblue;">AfroChic</a>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <a class="navbar-brand" href="{% url 'home' %}" style="margin-left: 10px;">AfroChic</a>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+          </li>
+          <figure>
+            <img src="{% static '/global/img_do_carrosel/logo_menor.jpg' %}" alt="" width="90" height="70">
+          </figure>
+        </ul>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" style="color: aliceblue;" aria-current="page" href="{% url 'home' %}">Home</a>
+              <a class="nav-link" href="{% url 'roupasfemininas' %}">roupas femininas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style="color: aliceblue;" href="{% url 'sobre' %}">Sobre</a>
-            </li>
-            <figure>
-              <img src="{% static '/global/img_do_carrosel/logo_menor.jpg' %}" alt="" width="90" height="70">
-            </figure>
-            <li class="nav-item">
-              <a class="nav-link" style="color: aliceblue;" href="{% url 'roupasfemininas' %}">roupas femininas</a>
+              <a class="nav-link" href="{% url 'roupasinfantis' %}">roupas infantis</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style="color: aliceblue;" href="{% url 'roupasinfantis' %}">roupas infantis</a>
+              <a class="nav-link" href="{% url 'acessorios' %}">acessorios</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style="color: aliceblue;" href="{% url 'acessorios' %}">acessorios</a>
+              <a class="nav-link" href="{% url 'sobre' %}">Sobre</a>
             </li>
           </ul>
         </div>
@@ -36,5 +37,5 @@
     </nav>
     <p style="text-align: center; background-color: rgba(241, 245, 246, 0.558);">vista a cultura e a moda
       Africana,celebre suas raizes com identidade e estilo</p>
-</section>
-  </header>
+  </section>
+</header>
