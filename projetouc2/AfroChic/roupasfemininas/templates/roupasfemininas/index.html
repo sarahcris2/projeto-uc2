@@ -2,17 +2,33 @@
 {% block main %}
 {% load static %}
 
-<section class="container">
-  <div class="row row-cols-4">
+<nav class="navbar bg-body-tertiary">
+  <div class="container">
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cartModal">
+          Carrinho (<span id="cartCount">0</span>)
+      </button>
+  </div>
+</nav>
+
+<section class="container mt-6">
+  <div class="row">
     {% for roupasfeminina in roupasfemininas %}
-    <div class="card col" style="width: 18rem;">
-      <img src="{{ roupasfeminina.foto.url }}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">{{ roupasfeminina.titulo }}</h5>
-        <p class="card-text">{{ roupasfeminina.descricao }}</p>
-        <a href="#" class="btn btn-primary"></a>
+    <div class="col-12 col-sm-12 col-md-4 mb-4">
+      <div class="card h-100">
+        <img src="{{ roupasfeminina.foto.url }}" class="card-img-top" alt="...">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title"><strong>{{ roupasfeminina.titulo }}</strong></h5>
+          <p class="card-text flex-grow-1">{{ roupasfeminina.descricao }}</p>
+          <p class="h4">R$ {{ roupasfeminina.preco }}</p>
+          <button class="btn btn-primary mt-auto" onclick="addToCart(1, '{{roupasfeminina.titulo}}', {{roupasfeminina.preco}})">Adicionar ao
+            Carrinho</button>
+        </div>
       </div>
     </div>
     {% endfor%}
+  </div>
+</section>
+
+<div id="alerts" class="container position-fixed top-0 start-50 translate-middle-x" style="z-index: 9999;"></div>
 
 {% endblock main %}
