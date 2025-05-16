@@ -188,6 +188,17 @@ form {
 }
 
 /* Links */
+
+p a {
+  color: var(--brown) !important;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+p a:hover {
+  color: var(--dark-brown) !important;
+  text-decoration: underline;
+}
 a {
   color: var(--white) !important;
   text-decoration: none;

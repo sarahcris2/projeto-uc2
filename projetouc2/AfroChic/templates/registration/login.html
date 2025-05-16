@@ -7,7 +7,19 @@
 <main>
   <div class="login-container">
     <div class="logo">
-      <img src="{% static 'global/img/Logo_HDG.png' %}" class="img-fluid mb-3 w-50 h-50" alt="Logo">
+      <img src="{% static 'global/img_do_carrosel/Logo_menor.jpg' %}" style="    width: 150px;
+      height: auto;
+      margin: 0px auto;
+      border: 1px solid #000000;
+      background-color: #ffffff;
+      padding: 5px;
+      margin: 5px;
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      border: 1px solid #000000;
+      border-radius: 20px;" class="img-fluid mb-3 w-50 h-50" alt="Logo">
     </div>
     <form method="post" action="{% url 'login' %}">
       {% csrf_token %}
@@ -46,32 +58,6 @@
       this.textContent = type === 'text' ? '🙈' : '👁';
   });
 </script>
-
-<!-- <main class="container">
-  <section class="row" id="registration">
-    <form class="row g-3" method="post" action="{% url 'login' %}" class="form-control">
-      {% csrf_token %}
-      <div class="col-md-6">
-        <label for="nome" class="form-label">Usuário</label>
-        <input type="text" class="form-control" name="username" id="username" placeholder="Coloque aqui seu nome"
-          required>
-      </div>
-      <div class="col-md-6">
-        <label for="password" class="form-label">Senha</label>
-        <input type="password" class="form-control" name="password" id="password" placeholder="Coloque aqui sua senha"
-          required>
-      </div>
-      <div class="col-12">
-        <input type="submit" value="login" />
-        <input type="hidden" name="next" value="{{ next }}" />
-      </div>
-
-      {# Supõe que você configure a visualização password_reset em seu URLconf #}
-      <p><a href="{% url 'password_reset' %}">Esqueceu a senha ?</a></p>
-
-    </form>
-  </section>
-</main> -->
 
 
 {% endblock main %}
