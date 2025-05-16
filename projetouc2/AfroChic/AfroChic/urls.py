@@ -41,4 +41,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
+#Adicione URLs de autenticação de site Django (para login, logout, gerenciamento de senha)
+urlpatterns += [
+    path('accounts/', include('django.contrib.auth.urls')),
+    path("accounts/", include("accounts.urls")),
+]
+
 urlpatterns+= static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -10,6 +10,9 @@ header{
     margin: 0px auto;
     border-radius: 10px;
 }
+header a {
+    color: rgb(255, 255, 255) !important; 
+}
 header img {
     border-radius: 20px;
 }
@@ -18,12 +21,261 @@ header img {
     background-color: #f2f2f2;
     padding: 20px;
     text-align: center;
+  }
+  
+  #sobre img {
+    max-width: 100%;
+    height: auto;
+  }  
+ 
+  #sobre h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  #sobre p {
+    font-size: 16px;
+    line-height: 1.5;
 }
-    #sobre h2 {
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
-    #sobre p {
-        font-size: 16px;
-        line-height:1.5;
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* styles.css */
+:root {
+  --gold: #D4AF37;
+  --brown: #6B4423;
+  --white: #FFFFFF;
+  --terracotta: #E2725B;
+  --light-beige: #F5E6D3;
+  --dark-brown: #4A2F1A;
+}
+
+body {
+  background-color: var(--light-beige);
+  color: var(--dark-brown);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Estilos Gerais para os Containers */
+.login-container,
+.card {
+  background: var(--white) !important;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 450px;
+  border: 2px solid var(--gold);
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.logo img {
+  max-width: 180px;
+  height: auto;
+}
+
+/* Formulários */
+form {
+  margin-top: 1.5rem;
+}
+
+.form-label {
+  color: var(--dark-brown);
+  font-weight: 600;
+}
+
+.form-control {
+  background-color: var(--light-beige) !important;
+  border: 2px solid var(--gold) !important;
+  border-radius: 8px !important;
+  color: var(--dark-brown) !important;
+  padding: 0.75rem 1rem !important;
+}
+
+.form-control:focus {
+  border-color: var(--terracotta) !important;
+  box-shadow: 0 0 0 0.25rem rgba(226, 114, 91, 0.25) !important;
+}
+
+/* Botões */
+.btn-login,
+.btn-danger {
+  background-color: var(--terracotta) !important;
+  border: none !important;
+  color: var(--white) !important;
+  padding: 0.75rem !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-login:hover,
+.btn-danger:hover {
+  background-color: var(--gold) !important;
+  transform: translateY(-2px);
+}
+
+#togglePassword {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--dark-brown);
+  border: none !important;
+}
+
+/* Links */
+a {
+  color: var(--terracotta) !important;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  color: var(--gold) !important;
+  text-decoration: underline;
+}
+
+/* Checkbox */
+.form-check-input:checked {
+  background-color: var(--terracotta) !important;
+  border-color: var(--terracotta) !important;
+}
+
+/* Alertas */
+.alert {
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+}
+
+.alert-danger {
+  background-color: #F8D7DA;
+  border-color: #F5C6CB;
+  color: #721C24;
+}
+
+.alert-success {
+  background-color: #D4EDDA;
+  border-color: #C3E6CB;
+  color: #155724;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .login-container,
+  .card {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .logo img {
+    max-width: 150px;
+  }
+  
+  .btn-login,
+  .btn-danger {
+    padding: 0.6rem !important;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .form-control {
+    padding: 0.6rem 0.9rem !important;
+  }
+  
+  .btn-login,
+  .btn-danger {
+    font-size: 0.85rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* Footer */
+
+footer {
+    background-color: rgb(151, 116, 27);
+    color: #fff;
+    padding: 40px 0;
+    margin-top: 40px;
+}
+footer h5 {
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+footer a:hover {
+    color: #ffcc00;
+}
+
+.footer-social a {
+    font-size: 24px;
+    margin-right: 15px;
+}
+.footer-bottom {
+    background-color: #222;
+    padding: 10px 0;
+    text-align: center;
+}
+.footer-bottom p {
+    margin: 0;
+    color: #ccc;
+}
