@@ -1,40 +1,72 @@
 {% load static %}
 <header>
-    <!-- cabeçalho da pagina-->
-<section style="justify-items: center;">
+  <section>
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
+        <figure>
+          <img src="{% static '/global/img_do_carrosel/logo_menor.jpg' %}" alt="" width="90" height="70">
+        </figure>
 
-        <a class="navbar-brand" href="{% url 'home' %}" style="margin-left: 10px; color: aliceblue;">AfroChic</a>
+        <a class="navbar-brand" href="{% url 'home' %}" style="color: aliceblue;">AfroChic</a>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link active" style="color: aliceblue;" aria-current="page" href="{% url 'home' %}">Home</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" style="color: aliceblue;" href="{% url 'roupasfemininas' %}">Roupas Femininas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: aliceblue;" href="{% url 'roupasinfantis' %}">Roupas Infantis</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: aliceblue;" href="{% url 'acessorios' %}">Acessórios</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" style="color: aliceblue;" href="{% url 'sobre' %}">Sobre</a>
             </li>
-            <figure>
-              <img src="{% static '/global/img_do_carrosel/logo_menor.jpg' %}" alt="" width="90" height="70">
-            </figure>
-            <li class="nav-item">
-              <a class="nav-link" style="color: aliceblue;" href="{% url 'roupasfemininas' %}">roupas femininas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" style="color: aliceblue;" href="{% url 'roupasinfantis' %}">roupas infantis</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" style="color: aliceblue;" href="{% url 'acessorios' %}">acessorios</a>
-            </li>
           </ul>
+          <!-- Login / Usuário Autenticado -->
+          <div class="d-flex justify-content-end align-items-center login-section">
+            {% if user.is_authenticated %}
+            <div class="dropdown user-dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="bi bi-person-circle"></i> {{ user.get_username }}
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                {% if user.is_staff or user.is_superuser %}
+                <li><a class="dropdown-item" href="/admin/">Admin</a></li>
+                {% endif %}
+                <li>
+                  <form method="post" action="{% url 'logout' %}" class="logout-form">
+                    {% csrf_token %}
+                    <button type="submit" class="dropdown-item logout-btn">
+                      <i class="bi bi-box-arrow-right"></i> Logout
+                    </button>
+                  </form>
+                </li>
+              </ul>
+            </div>
+            {% else %}
+            <a class="btn btn-danger login-highlight ms-3" href="{% url 'login' %}?next={{request.path}}">
+              <i class="bi bi-box-arrow-in-right"></i> Login
+            </a>
+            {% endif %}
+          </div>
+
         </div>
       </div>
     </nav>
-    <p style="text-align: center; background-color: rgba(241, 245, 246, 0.558);">vista a cultura e a moda
-      Africana,celebre suas raizes com identidade e estilo</p>
-</section>
-  </header>
+  </section>
+
+  <p style="text-align: center; background-color: rgba(241, 245, 246, 0.558);">
+    Vista a cultura e a moda Africana, celebre suas raízes com identidade e estilo.
+  </p>
+</header>
